@@ -1,0 +1,26 @@
+{
+  "date": "2026-03-15",
+  "total_scanned": 50,
+  "vcp_detected": 1,
+  "signals": [
+    {
+      "code": "042700",
+      "name": "한미반도체",
+      "market": "KOSPI",
+      "grade": "B",
+      "score": 32,
+      "c1": 18.0,
+      "c2": 12.34,
+      "c3": 10.88,
+      "r12": 1.46,
+      "r23": 1.13,
+      "pivot_high": 335500.0,
+      "foreign_5d": -417627,
+      "inst_5d": 292396,
+      "current_price": 311000,
+      "return_pct": 1.8,
+      "status": "CLOSED",
+      "entry_price": 305500
+    }
+  ]
+}

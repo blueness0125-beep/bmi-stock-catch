@@ -1,0 +1,20 @@
+# Web API
+flask==3.1.0
+flask-cors==5.0.0
+python-dotenv==1.1.0
+
+# Data collection
+requests==2.32.3
+beautifulsoup4==4.13.4
+yfinance==0.2.55
+
+# Data processing
+pandas==2.2.3
+numpy==2.2.5
+matplotlib==3.10.1
+
+# LLM
+google-genai==1.11.0
+
+# Async HTTP (VCP scanner)
+aiohttp==3.11.18
