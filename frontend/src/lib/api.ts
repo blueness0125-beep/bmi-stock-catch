@@ -1,22 +1,21 @@
 /**
- * API client — works in both server (SSR) and browser (CSR).
+ * API client — 항상 상대 경로 사용.
+ * 서버 컴포넌트(SSR): Next.js 내부 API route 호출
+ * 클라이언트 컴포넌트(CSR): 동일
  *
- * Server-side: uses BACKEND_URL env var → direct call to Flask API
- * Browser-side: uses relative path "/api/kr/*" → proxied via Next.js rewrites
+ * 모든 API는 frontend/src/app/api/kr/ 아래에 구현되어 있으며,
+ * Flask 백엔드 없이 Vercel 단독으로 동작합니다.
  */
 
-function getBase(): string {
-  if (typeof window !== "undefined") {
-    // Client-side: relative URL, Next.js rewrites proxy to Flask
-    return ""
-  }
-  // Server-side: direct backend URL
-  return process.env.BACKEND_URL ?? "http://localhost:5001"
-}
+async function fetcher<T>(path: string, init?: RequestInit): Promise<T> {
+  // SSR에서는 절대 URL이 필요하므로 NEXTAUTH_URL 또는 localhost 사용
+  const base =
+    typeof window === "undefined"
+      ? (process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000")
+      : ""
 
-async function fetcher<T>(path: string): Promise<T> {
-  const url = `${getBase()}${path}`
-  const res = await fetch(url, { next: { revalidate: 60 } })
+  const url = `${base}${path}`
+  const res = await fetch(url, { next: { revalidate: 60 }, ...init })
   if (!res.ok) throw new Error(`API error ${res.status}: ${url}`)
   return res.json()
 }
