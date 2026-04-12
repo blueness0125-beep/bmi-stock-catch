@@ -1,9 +1,9 @@
-import { api } from "@/lib/api"
+import { getCumulativeStats } from "@/lib/data-server"
 import PerformanceClient from "./PerformanceClient"
 
 export const revalidate = 120
 
-export default async function PerformancePage() {
-  const data = await api.cumulative(1).catch(() => null)
+export default function PerformancePage() {
+  const data = getCumulativeStats(1)
   return <PerformanceClient initialData={data} />
 }
