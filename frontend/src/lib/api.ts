@@ -33,6 +33,33 @@ export interface ScoreDetail {
   llm_reason?: string
 }
 
+export interface Checklist {
+  mandatory: {
+    has_news: boolean
+    news_sources: string[]
+    volume_sufficient: boolean
+  }
+  optional: {
+    is_new_high: boolean
+    is_breakout: boolean
+    ma_aligned: boolean
+    good_candle: boolean
+    upper_wick_long: boolean
+    has_consolidation: boolean
+    supply_positive: boolean
+    retracement_recovery: boolean
+    pullback_support_confirmed: boolean
+  }
+  negative: {
+    negative_news: boolean
+  }
+}
+
+export interface NewsItem {
+  title: string
+  summary: string
+}
+
 export interface Signal {
   stock_code: string
   stock_name: string
@@ -54,6 +81,8 @@ export interface Signal {
   r_multiplier: number
   themes: string[]
   signal_date?: string
+  checklist?: Checklist
+  news_items?: NewsItem[]
 }
 
 export interface SignalsResponse {

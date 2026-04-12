@@ -44,21 +44,58 @@ export interface RawSignal {
   r12?: number
   r23?: number
   pivot_high?: number
+  // Checklist and news
+  checklist?: {
+    mandatory?: { has_news?: boolean; news_sources?: string[]; volume_sufficient?: boolean }
+    optional?: {
+      is_new_high?: boolean; is_breakout?: boolean; ma_aligned?: boolean
+      good_candle?: boolean; upper_wick_long?: boolean; has_consolidation?: boolean
+      supply_positive?: boolean; retracement_recovery?: boolean; pullback_support_confirmed?: boolean
+    }
+    negative?: { negative_news?: boolean }
+  }
+  news_items?: { title?: string; summary?: string }[]
 }
 
 // ── 종가베팅 V2 ───────────────────────────────────────────────────
 
 export function getSignals() {
   try {
-    const data = readJson<{ signals?: RawSignal[]; date?: string }>("jongga_v2_latest.json")
+    const data = readJson<{
+      signals?: RawSignal[]
+      date?: string
+      by_grade?: Record<string, number>
+      by_market?: Record<string, number>
+      total_candidates?: number
+      filtered_count?: number
+      processing_time_ms?: number
+    }>("jongga_v2_latest.json")
     const signals = (data.signals ?? []).sort((a, b) => {
       const at = typeof a.score === "number" ? a.score : a.score?.total ?? 0
       const bt = typeof b.score === "number" ? b.score : b.score?.total ?? 0
       return bt - at
     })
-    return { signals, count: signals.length, generated_at: data.date ?? "" }
+    return {
+      signals,
+      count: signals.length,
+      generated_at: data.date ?? "",
+      by_grade: data.by_grade ?? {},
+      by_market: data.by_market ?? {},
+      total_candidates: data.total_candidates ?? 0,
+      filtered_count: data.filtered_count ?? signals.length,
+      processing_time_ms: data.processing_time_ms ?? 0,
+    }
   } catch {
-    return { signals: [], count: 0, generated_at: "" }
+    return {
+      signals: [],
+      count: 0,
+      generated_at: "",
+      by_grade: {},
+      by_market: {},
+      total_candidates: 0,
+      filtered_count: 0,
+      processing_time_ms: 0,
+    }
   }
 }
 
