@@ -1,7 +1,6 @@
 import asyncio
 import json
 import os
-import time
 from datetime import date, datetime
 from pathlib import Path
 from typing import List, Optional
@@ -12,7 +11,7 @@ from bs4 import BeautifulSoup
 
 from config import VCPConfig
 from indicators import atr
-from vcp_detector import VCPResult, detect_vcp, score_vcp
+from vcp_detector import detect_vcp, score_vcp
 
 
 HEADERS = {
