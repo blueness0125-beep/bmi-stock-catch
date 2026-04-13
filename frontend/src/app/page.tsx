@@ -1,27 +1,15 @@
 import { RefreshCw, Activity, TrendingUp, Tag } from "lucide-react"
 import { getSignals, getVCPSignals } from "@/lib/data-server"
+import { getMarketGate } from "@/lib/market-server"
 import { formatDate, scoreTotal } from "@/lib/utils"
 import SignalCard from "@/components/SignalCard"
 import MarketGateBadge from "@/components/MarketGateBadge"
 import StatsRow from "@/components/StatsRow"
 import SectorList from "@/components/SectorList"
 import VCPCard from "@/components/VCPCard"
-import type { Signal, MarketGateResponse } from "@/lib/api"
+import type { Signal } from "@/lib/api"
 
 export const revalidate = 60
-
-async function fetchMarketGate(): Promise<MarketGateResponse | null> {
-  try {
-    const base = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000"
-    const res = await fetch(`${base}/api/kr/market-gate`, { next: { revalidate: 300 } })
-    if (!res.ok) return null
-    return res.json()
-  } catch {
-    return null
-  }
-}
 
 function GradeBar({ grade, count, total }: { grade: string; count: number; total: number }) {
   const pct = total > 0 ? (count / total) * 100 : 0
@@ -41,7 +29,7 @@ function GradeBar({ grade, count, total }: { grade: string; count: number; total
 export default async function DashboardPage() {
   const signalsData = getSignals()
   const vcpData = getVCPSignals()
-  const marketData = await fetchMarketGate()
+  const marketData = await getMarketGate()
 
   const signals = signalsData.signals as unknown as Signal[]
   const aCount = signals.filter((s) => s.grade === "A").length

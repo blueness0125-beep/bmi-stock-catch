@@ -93,7 +93,7 @@ export interface SignalsResponse {
 
 export interface MarketGateResponse {
   date: string
-  kodex200: { code: string; price: number; ma20: number; ma50: number; ma200: number }
+  kodex200: { code: string; price: number; ma20: number | null; ma50: number | null; ma200: number | null }
   regime: "RISK_ON" | "NEUTRAL" | "RISK_OFF" | "UNKNOWN"
   regime_detail: { price_above_ma200: boolean | null; ma20_above_ma50: boolean | null }
   sectors: { name: string; change_pct: number }[]
