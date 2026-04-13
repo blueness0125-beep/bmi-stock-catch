@@ -6,8 +6,7 @@ import MarketGateBadge from "@/components/MarketGateBadge"
 import StatsRow from "@/components/StatsRow"
 import SectorList from "@/components/SectorList"
 import VCPCard from "@/components/VCPCard"
-import type { Signal } from "@/lib/api"
-import type { MarketGateResponse } from "@/lib/api"
+import type { Signal, MarketGateResponse } from "@/lib/api"
 
 export const revalidate = 60
 
@@ -122,8 +121,12 @@ export default async function DashboardPage() {
           <div className="lg:col-span-2 space-y-3">
             {signals.length === 0 ? (
               <div className="bg-[#111111] border border-[#222222] rounded-xl p-8 text-center">
-                <p className="text-slate-500 text-sm">오늘 시그널이 없습니다.</p>
-                <p className="text-slate-600 text-xs mt-1">엔진을 실행하여 데이터를 수집하세요.</p>
+                <p className="text-slate-400 text-sm font-medium">오늘 시그널이 없습니다.</p>
+                <p className="text-slate-600 text-xs mt-1.5">
+                  {signalsData.total_candidates > 0
+                    ? `${signalsData.total_candidates}개 후보 중 품질 게이트를 통과한 종목이 없습니다.`
+                    : "엔진을 실행하여 데이터를 수집하세요."}
+                </p>
               </div>
             ) : (
               signals.map((s) => (
@@ -192,16 +195,16 @@ export default async function DashboardPage() {
       </section>
 
       {/* ── 테마 집계 ──────────────────────────── */}
-      {topThemes.length > 0 && (
-        <section className="space-y-4">
-          <div className="flex items-center gap-2">
-            <Tag className="w-4 h-4 text-sky-400" />
-            <h2 className="text-sm font-semibold text-white">테마 집계</h2>
-            <span className="text-[10px] px-1.5 py-0.5 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full">
-              오늘 시그널 기반
-            </span>
-          </div>
-          <div className="bg-[#111111] border border-[#222222] rounded-xl p-4">
+      <section className="space-y-4">
+        <div className="flex items-center gap-2">
+          <Tag className="w-4 h-4 text-sky-400" />
+          <h2 className="text-sm font-semibold text-white">테마 집계</h2>
+          <span className="text-[10px] px-1.5 py-0.5 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full">
+            오늘 시그널 기반
+          </span>
+        </div>
+        <div className="bg-[#111111] border border-[#222222] rounded-xl p-4">
+          {topThemes.length > 0 ? (
             <div className="flex flex-wrap gap-2">
               {topThemes.map(([theme, count]) => (
                 <div
@@ -215,9 +218,13 @@ export default async function DashboardPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-      )}
+          ) : (
+            <p className="text-sm text-slate-500 text-center py-2">
+              오늘 시그널이 없어 집계할 테마가 없습니다.
+            </p>
+          )}
+        </div>
+      </section>
 
       {/* ── VCP 스캐너 ──────────────────────────── */}
       <section className="space-y-4">
