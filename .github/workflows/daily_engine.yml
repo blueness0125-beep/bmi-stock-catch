@@ -10,6 +10,8 @@ on:
 jobs:
   run-engine:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 결과 JSON 커밋·푸시에 필요
     # 공휴일 스킵 로직 없음 — 공휴일에 시그널 0개로 실행되어도 무방
 
     steps:
