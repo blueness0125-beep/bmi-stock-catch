@@ -1,7 +1,9 @@
 import asyncio
 import json
+import os
 import time
 from datetime import date, datetime
+from pathlib import Path
 from typing import List, Optional
 
 import aiohttp
@@ -264,9 +266,16 @@ async def scan_vcp(top_n: int = 50, cutoff_date: Optional[date] = None):
         "vcp_detected": len(results),
         "signals": results,
     }
-    output_path = "/Users/seoheun/Documents/Part1/kr_market/data/vcp_signals.json"
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+    root = Path(__file__).resolve().parent.parent
+    data_dirs = [
+        root / "data",
+        root / "frontend" / "public" / "data",
+    ]
+    json_str = json.dumps(output, ensure_ascii=False, indent=2)
+    for data_dir in data_dirs:
+        os.makedirs(data_dir, exist_ok=True)
+        output_path = data_dir / "vcp_signals.json"
+        output_path.write_text(json_str, encoding="utf-8")
 
     # 5. 결과 테이블 출력
     print(f"\n{'='*90}")

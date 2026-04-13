@@ -1,0 +1,68 @@
+name: 종가베팅 V2 일일 실행
+
+on:
+  schedule:
+    # 평일 15:35 KST (06:35 UTC) — 한국 장 마감(15:30) 5분 후
+    - cron: '35 6 * * 1-5'
+  workflow_dispatch:
+    # 수동 실행 지원 (GitHub Actions 탭에서 "Run workflow" 버튼)
+
+jobs:
+  run-engine:
+    runs-on: ubuntu-latest
+    # 공휴일 스킵 로직 없음 — 공휴일에 시그널 0개로 실행되어도 무방
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 3.11 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 의존성 설치
+        run: pip install -r requirements.txt
+
+      - name: 종가베팅 V2 엔진 실행
+        working-directory: engine
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 run_engine.py
+
+      - name: VCP 스캐너 실행
+        working-directory: engine
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python3 vcp_scanner.py
+
+      - name: 결과 파일 커밋 & 푸시
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          TODAY=$(date -u +%Y%m%d)
+
+          git add \
+            frontend/public/data/jongga_v2_latest.json \
+            frontend/public/data/vcp_signals.json \
+            "frontend/public/data/jongga_v2_results_${TODAY}.json" || true
+
+          # 변경 파일이 없으면 커밋 건너뜀
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 건너뜀"
+          else
+            SIGNALS=$(python3 -c "
+          import json
+          d = json.load(open('frontend/public/data/jongga_v2_latest.json'))
+          print(len(d.get('signals', [])))
+          ")
+            git commit -m "data: $(date -u +%Y-%m-%d) 종가베팅 V2 실행 결과 (시그널 ${SIGNALS}개)"
+            git push
+          fi
