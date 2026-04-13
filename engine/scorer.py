@@ -233,6 +233,8 @@ class Scorer:
 
         high_20 = max(c.high for c in recent_20)
         low_20 = min(c.low for c in recent_20)
+        if low_20 == 0:
+            return 0, False
         range_20 = (high_20 - low_20) / low_20
 
         high_5 = max(c.high for c in recent_5)
