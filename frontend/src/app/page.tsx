@@ -134,26 +134,26 @@ export default async function DashboardPage() {
 
           {/* Right panel: Market gate + Grade/Market dist + Themes */}
           <div className="space-y-4">
-            {/* Grade distribution */}
-            {gradeTotal > 0 && (
-              <div className="bg-[#111111] border border-[#222222] rounded-xl p-4">
-                <p className="text-[11px] text-slate-500 mb-3 font-medium">등급 분포</p>
-                <div className="space-y-2">
-                  {gradeOrder.map((g) => (
-                    <GradeBar key={g} grade={g} count={byGrade[g] ?? 0} total={gradeTotal} />
-                  ))}
-                </div>
-                {Object.keys(byMarket).length > 0 && (
-                  <div className="mt-3 pt-3 border-t border-[#1a1a1a] flex gap-3">
-                    {Object.entries(byMarket).map(([market, cnt]) => (
-                      <span key={market} className="text-[10px] text-slate-400">
-                        {market} <span className="text-white font-semibold">{cnt}</span>
-                      </span>
-                    ))}
-                  </div>
+            {/* Grade distribution — always visible */}
+            <div className="bg-[#111111] border border-[#222222] rounded-xl p-4">
+              <p className="text-[11px] text-slate-500 mb-3 font-medium">등급 분포</p>
+              <div className="space-y-2">
+                {gradeOrder.map((g) => (
+                  <GradeBar key={g} grade={g} count={byGrade[g] ?? 0} total={Math.max(gradeTotal, 1)} />
+                ))}
+              </div>
+              <div className="mt-3 pt-3 border-t border-[#1a1a1a] flex gap-3">
+                {Object.keys(byMarket).length > 0 ? (
+                  Object.entries(byMarket).map(([market, cnt]) => (
+                    <span key={market} className="text-[10px] text-slate-400">
+                      {market} <span className="text-white font-semibold">{cnt}</span>
+                    </span>
+                  ))
+                ) : (
+                  <span className="text-[10px] text-slate-600">시장 데이터 없음</span>
                 )}
               </div>
-            )}
+            </div>
 
             {/* Market gate panel */}
             <div className="space-y-3">
