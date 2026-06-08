@@ -1,37 +1,22 @@
 {
-  "date": "2026-06-05",
+  "date": "2026-06-08",
   "total_scanned": 50,
-  "vcp_detected": 3,
+  "vcp_detected": 2,
   "signals": [
-    {
-      "code": "005930",
-      "name": "삼성전자",
-      "market": "KOSPI",
-      "grade": "B",
-      "score": 58,
-      "c1": 20.1,
-      "c2": 7.6,
-      "c3": 4.01,
-      "r12": 2.64,
-      "r23": 1.9,
-      "pivot_high": 299500.0,
-      "foreign_5d": -28915106,
-      "inst_5d": 14042516
-    },
     {
       "code": "402340",
       "name": "SK스퀘어",
       "market": "KOSPI",
-      "grade": "B",
+      "grade": "C",
       "score": 32,
       "c1": 27.33,
       "c2": 20.15,
-      "c3": 12.27,
+      "c3": 17.58,
       "r12": 1.36,
-      "r23": 1.64,
+      "r23": 1.15,
       "pivot_high": 1337000.0,
-      "foreign_5d": 545187,
-      "inst_5d": -73984
+      "foreign_5d": 609193,
+      "inst_5d": -251512
     },
     {
       "code": "010120",
@@ -45,8 +30,8 @@
       "r12": 2.52,
       "r23": 1.49,
       "pivot_high": 291000.0,
-      "foreign_5d": 407343,
-      "inst_5d": -257116
+      "foreign_5d": 275971,
+      "inst_5d": -80192
     }
   ]
 }
