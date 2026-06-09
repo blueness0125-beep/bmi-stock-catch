@@ -1,23 +1,8 @@
 {
-  "date": "2026-06-08",
+  "date": "2026-06-09",
   "total_scanned": 50,
-  "vcp_detected": 2,
+  "vcp_detected": 1,
   "signals": [
-    {
-      "code": "402340",
-      "name": "SK스퀘어",
-      "market": "KOSPI",
-      "grade": "C",
-      "score": 32,
-      "c1": 27.33,
-      "c2": 20.15,
-      "c3": 17.58,
-      "r12": 1.36,
-      "r23": 1.15,
-      "pivot_high": 1337000.0,
-      "foreign_5d": 609193,
-      "inst_5d": -251512
-    },
     {
       "code": "010120",
       "name": "LS ELECTRIC",
@@ -30,8 +15,8 @@
       "r12": 2.52,
       "r23": 1.49,
       "pivot_high": 291000.0,
-      "foreign_5d": 275971,
-      "inst_5d": -80192
+      "foreign_5d": -173126,
+      "inst_5d": -176884
     }
   ]
 }
