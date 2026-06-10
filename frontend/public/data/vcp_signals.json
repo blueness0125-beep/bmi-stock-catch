@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-09",
+  "date": "2026-06-10",
   "total_scanned": 50,
   "vcp_detected": 1,
   "signals": [
@@ -15,8 +15,8 @@
       "r12": 2.52,
       "r23": 1.49,
       "pivot_high": 291000.0,
-      "foreign_5d": -173126,
-      "inst_5d": -176884
+      "foreign_5d": -41043,
+      "inst_5d": 55856
     }
   ]
 }
