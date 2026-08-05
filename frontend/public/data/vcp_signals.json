@@ -1,7 +1,7 @@
 {
-  "date": "2026-08-04",
+  "date": "2026-08-05",
   "total_scanned": 50,
-  "vcp_detected": 5,
+  "vcp_detected": 10,
   "signals": [
     {
       "code": "207940",
@@ -15,14 +15,14 @@
       "r12": 1.27,
       "r23": 1.46,
       "pivot_high": 1445000.0,
-      "foreign_5d": 9833,
-      "inst_5d": -1512
+      "foreign_5d": 32181,
+      "inst_5d": -31801
     },
     {
       "code": "055550",
       "name": "신한지주",
       "market": "KOSPI",
-      "grade": "C",
+      "grade": "B",
       "score": 36,
       "c1": 19.31,
       "c2": 14.12,
@@ -30,14 +30,14 @@
       "r12": 1.37,
       "r23": 1.25,
       "pivot_high": 107900.0,
-      "foreign_5d": 2904,
-      "inst_5d": 80069
+      "foreign_5d": 211525,
+      "inst_5d": -21272
     },
     {
       "code": "105560",
       "name": "KB금융",
       "market": "KOSPI",
-      "grade": "C",
+      "grade": "B",
       "score": 35,
       "c1": 20.63,
       "c2": 15.63,
@@ -45,8 +45,8 @@
       "r12": 1.32,
       "r23": 1.17,
       "pivot_high": 180100.0,
-      "foreign_5d": -15333,
-      "inst_5d": -56870
+      "foreign_5d": 369537,
+      "inst_5d": -264570
     },
     {
       "code": "010130",
@@ -60,23 +60,98 @@
       "r12": 1.17,
       "r23": 1.04,
       "pivot_high": 1085000.0,
-      "foreign_5d": -1552,
-      "inst_5d": 9279
+      "foreign_5d": -2613,
+      "inst_5d": 9534
+    },
+    {
+      "code": "028260",
+      "name": "삼성물산",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 32,
+      "c1": 45.38,
+      "c2": 29.76,
+      "c3": 12.73,
+      "r12": 1.52,
+      "r23": 2.34,
+      "pivot_high": 357500.0,
+      "foreign_5d": 121103,
+      "inst_5d": -4159
+    },
+    {
+      "code": "069500",
+      "name": "KODEX 200",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 29,
+      "c1": 32.8,
+      "c2": 28.08,
+      "c3": 12.98,
+      "r12": 1.17,
+      "r23": 2.16,
+      "pivot_high": 110000.0,
+      "foreign_5d": -285095,
+      "inst_5d": 1047307
+    },
+    {
+      "code": "000660",
+      "name": "SK하이닉스",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 28,
+      "c1": 43.82,
+      "c2": 37.89,
+      "c3": 13.68,
+      "r12": 1.16,
+      "r23": 2.77,
+      "pivot_high": 1718000.0,
+      "foreign_5d": 1514160,
+      "inst_5d": -100295
     },
     {
       "code": "096770",
       "name": "SK이노베이션",
       "market": "KOSPI",
       "grade": "D",
-      "score": 0,
+      "score": 28,
       "c1": 27.05,
       "c2": 24.53,
       "c3": 23.42,
       "r12": 1.1,
       "r23": 1.05,
       "pivot_high": 135800.0,
-      "foreign_5d": -314264,
-      "inst_5d": 123476
+      "foreign_5d": -343921,
+      "inst_5d": -278461
+    },
+    {
+      "code": "005930",
+      "name": "삼성전자",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 26,
+      "c1": 35.91,
+      "c2": 31.45,
+      "c3": 14.61,
+      "r12": 1.14,
+      "r23": 2.15,
+      "pivot_high": 267000.0,
+      "foreign_5d": 8268306,
+      "inst_5d": -7662142
+    },
+    {
+      "code": "032830",
+      "name": "삼성생명",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 24,
+      "c1": 31.75,
+      "c2": 28.49,
+      "c3": 14.9,
+      "r12": 1.11,
+      "r23": 1.91,
+      "pivot_high": 315500.0,
+      "foreign_5d": 4131,
+      "inst_5d": -51439
     }
   ]
 }
