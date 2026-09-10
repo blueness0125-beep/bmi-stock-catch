@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "total_scanned": 50,
-  "vcp_detected": 20,
+  "vcp_detected": 19,
   "signals": [
     {
       "code": "010140",
@@ -15,23 +15,8 @@
       "r12": 1.64,
       "r23": 1.86,
       "pivot_high": 21500.0,
-      "foreign_5d": 276053,
-      "inst_5d": 2652213
-    },
-    {
-      "code": "329180",
-      "name": "HD현대중공업",
-      "market": "KOSPI",
-      "grade": "B",
-      "score": 63,
-      "c1": 29.86,
-      "c2": 18.84,
-      "c3": 13.96,
-      "r12": 1.59,
-      "r23": 1.35,
-      "pivot_high": 480000.0,
-      "foreign_5d": -145332,
-      "inst_5d": 179358
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "042700",
@@ -45,38 +30,38 @@
       "r12": 2.37,
       "r23": 1.96,
       "pivot_high": 227500.0,
-      "foreign_5d": 661159,
-      "inst_5d": 366787
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "055550",
       "name": "신한지주",
       "market": "KOSPI",
       "grade": "B",
-      "score": 61,
+      "score": 62,
       "c1": 14.12,
       "c2": 11.31,
       "c3": 8.43,
       "r12": 1.25,
       "r23": 1.34,
       "pivot_high": 110300.0,
-      "foreign_5d": -841707,
-      "inst_5d": 1102887
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "005490",
       "name": "POSCO홀딩스",
       "market": "KOSPI",
       "grade": "B",
-      "score": 61,
+      "score": 62,
       "c1": 15.38,
       "c2": 9.05,
       "c3": 6.7,
       "r12": 1.7,
       "r23": 1.35,
       "pivot_high": 351000.0,
-      "foreign_5d": -119483,
-      "inst_5d": 110977
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "069500",
@@ -90,38 +75,8 @@
       "r12": 2.29,
       "r23": 1.25,
       "pivot_high": 110910.0,
-      "foreign_5d": -250249,
-      "inst_5d": 3492928
-    },
-    {
-      "code": "015760",
-      "name": "한국전력",
-      "market": "KOSPI",
-      "grade": "B",
-      "score": 57,
-      "c1": 18.99,
-      "c2": 16.71,
-      "c3": 14.42,
-      "r12": 1.14,
-      "r23": 1.16,
-      "pivot_high": 36400.0,
-      "foreign_5d": -398430,
-      "inst_5d": 1834847
-    },
-    {
-      "code": "042660",
-      "name": "한화오션",
-      "market": "KOSPI",
-      "grade": "B",
-      "score": 55,
-      "c1": 22.16,
-      "c2": 18.41,
-      "c3": 9.39,
-      "r12": 1.2,
-      "r23": 1.96,
-      "pivot_high": 90500.0,
-      "foreign_5d": 243757,
-      "inst_5d": 212138
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "105560",
@@ -135,8 +90,8 @@
       "r12": 1.36,
       "r23": 1.57,
       "pivot_high": 180700.0,
-      "foreign_5d": -383654,
-      "inst_5d": 603356
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "034730",
@@ -150,8 +105,8 @@
       "r12": 2.05,
       "r23": 1.69,
       "pivot_high": 587000.0,
-      "foreign_5d": 52050,
-      "inst_5d": 10001
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "000660",
@@ -165,8 +120,8 @@
       "r12": 1.18,
       "r23": 1.3,
       "pivot_high": 1792000.0,
-      "foreign_5d": 985504,
-      "inst_5d": 335631
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "010120",
@@ -180,8 +135,8 @@
       "r12": 1.92,
       "r23": 1.12,
       "pivot_high": 224000.0,
-      "foreign_5d": 293286,
-      "inst_5d": 55244
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "086520",
@@ -195,38 +150,23 @@
       "r12": 1.64,
       "r23": 1.18,
       "pivot_high": 92300.0,
-      "foreign_5d": -45542,
-      "inst_5d": -35921
-    },
-    {
-      "code": "066570",
-      "name": "LG전자",
-      "market": "KOSPI",
-      "grade": "B",
-      "score": 34,
-      "c1": 26.97,
-      "c2": 18.44,
-      "c3": 10.88,
-      "r12": 1.46,
-      "r23": 1.7,
-      "pivot_high": 217000.0,
-      "foreign_5d": -28288,
-      "inst_5d": 227593
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "018260",
       "name": "삼성에스디에스",
       "market": "KOSPI",
       "grade": "C",
-      "score": 47,
+      "score": 48,
       "c1": 15.93,
       "c2": 13.5,
       "c3": 10.57,
       "r12": 1.18,
       "r23": 1.28,
       "pivot_high": 246000.0,
-      "foreign_5d": 129471,
-      "inst_5d": -92833
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "034020",
@@ -240,53 +180,98 @@
       "r12": 1.42,
       "r23": 1.05,
       "pivot_high": 89100.0,
-      "foreign_5d": -700652,
-      "inst_5d": 3103607
+      "foreign_5d": 0,
+      "inst_5d": 0
+    },
+    {
+      "code": "329180",
+      "name": "HD현대중공업",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 62,
+      "c1": 29.86,
+      "c2": 18.84,
+      "c3": 13.96,
+      "r12": 1.59,
+      "r23": 1.35,
+      "pivot_high": 480000.0,
+      "foreign_5d": 0,
+      "inst_5d": 0
+    },
+    {
+      "code": "015760",
+      "name": "한국전력",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 56,
+      "c1": 18.99,
+      "c2": 16.71,
+      "c3": 14.42,
+      "r12": 1.14,
+      "r23": 1.16,
+      "pivot_high": 36400.0,
+      "foreign_5d": 0,
+      "inst_5d": 0
+    },
+    {
+      "code": "042660",
+      "name": "한화오션",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 55,
+      "c1": 22.16,
+      "c2": 18.41,
+      "c3": 9.39,
+      "r12": 1.2,
+      "r23": 1.96,
+      "pivot_high": 90500.0,
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "006800",
       "name": "미래에셋증권",
       "market": "KOSPI",
       "grade": "D",
-      "score": 52,
+      "score": 53,
       "c1": 38.25,
       "c2": 17.2,
       "c3": 13.73,
       "r12": 2.22,
       "r23": 1.25,
       "pivot_high": 37500.0,
-      "foreign_5d": 582556,
-      "inst_5d": 510906
-    },
-    {
-      "code": "009540",
-      "name": "HD한국조선해양",
-      "market": "KOSPI",
-      "grade": "D",
-      "score": 36,
-      "c1": 19.28,
-      "c2": 16.61,
-      "c3": 11.65,
-      "r12": 1.16,
-      "r23": 1.43,
-      "pivot_high": 369000.0,
-      "foreign_5d": -42600,
-      "inst_5d": 104197
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "012450",
       "name": "한화에어로스페이스",
       "market": "KOSPI",
       "grade": "D",
-      "score": 35,
+      "score": 36,
       "c1": 25.43,
       "c2": 15.94,
       "c3": 13.6,
       "r12": 1.6,
       "r23": 1.17,
       "pivot_high": 1169000.0,
-      "foreign_5d": -52015,
-      "inst_5d": 32575
+      "foreign_5d": 0,
+      "inst_5d": 0
+    },
+    {
+      "code": "009540",
+      "name": "HD한국조선해양",
+      "market": "KOSPI",
+      "grade": "D",
+      "score": 35,
+      "c1": 19.28,
+      "c2": 16.61,
+      "c3": 11.65,
+      "r12": 1.16,
+      "r23": 1.43,
+      "pivot_high": 369000.0,
+      "foreign_5d": 0,
+      "inst_5d": 0
     },
     {
       "code": "402340",
@@ -300,8 +285,8 @@
       "r12": 1.03,
       "r23": 1.24,
       "pivot_high": 1145000.0,
-      "foreign_5d": 340056,
-      "inst_5d": 251384
+      "foreign_5d": 0,
+      "inst_5d": 0
     }
   ]
 }
