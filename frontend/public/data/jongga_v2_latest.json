@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-09",
   "total_candidates": 30,
   "filtered_count": 0,
   "signals": [],
   "by_grade": {},
   "by_market": {},
-  "processing_time_ms": 17207.918643951416,
-  "updated_at": "2026-11-06T14:32:46"
+  "processing_time_ms": 11632.09319114685,
+  "updated_at": "2026-11-09T16:47:59"
 }
